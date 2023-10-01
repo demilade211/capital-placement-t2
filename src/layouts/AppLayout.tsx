@@ -14,11 +14,9 @@ const AppLayout: React.FC<any> = ({ children }) => {
 }
 
 const Con = styled.div`  
-    width: 100%;
-    height: 100vh;   
+    width: 100%; 
     .right-con{    
-        margin-left:80px;  
-        border:1px solid black;
+        margin-left:80px;   
     } 
 `; 
 

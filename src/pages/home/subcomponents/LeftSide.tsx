@@ -2,15 +2,20 @@ import React from 'react'
 import search from "../images/search.svg"
 import down from "../images/down.svg"
 import file from "../images/file.svg"
-import styled from 'styled-components'; 
+import styled from 'styled-components';
 import { Col, Divider, Row } from 'antd';
 
-const LeftSide = () => {
+const LeftSide: React.FC<any> = ({ setJobQualifications, filterJobs,setQuery }) => {
     return (
         <Left>
             <h1>London Internship Program</h1>
             <p className='sub-text'>London</p>
-            <SearchCon>
+            <SearchCon
+                onChange={(e:any) => {
+                    setQuery(e.target.value)
+                }}
+
+            >
                 <img src={search} alt="img" />
                 <input type="text" placeholder="Serach by name, edu, exp or #tag" />
             </SearchCon>
@@ -32,7 +37,7 @@ const LeftSide = () => {
 
 const Left = styled.div`  
     width: 100%;   
-    padding: 30px;
+    padding: 30px;  
     h1{
         color: #1D4ED8;
         font-family: Poppins;
